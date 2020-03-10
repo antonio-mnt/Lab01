@@ -25,5 +25,9 @@ public class Parole {
 	public void reset() {
 		parola.clear();
 	}
+	
+	public void cancella(String p) {
+		parola.remove(p);
+	}
 
 }
