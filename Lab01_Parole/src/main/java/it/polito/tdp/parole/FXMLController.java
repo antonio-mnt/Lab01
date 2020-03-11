@@ -56,13 +56,15 @@ public class FXMLController {
     	
     	txtResult.setText(e);
     	
-    	long time = System.nanoTime();
-    	txtTempi.appendText(""+time+" ns\n");
+    	//long time = System.nanoTime();
+    	//txtTempi.appendText(""+time+" ns\n");
     	
     }
 
     @FXML
     void doInsert(ActionEvent event) {
+    	
+    	long startTime = System.nanoTime();
     	
     	String par = txtParola.getText();
     	if(par.contains(" ") || par.equals("")) {
@@ -83,8 +85,9 @@ public class FXMLController {
     	
     	txtResult.setText(e);
     	txtParola.clear();
-    	long time = System.nanoTime();
-    	txtTempi.appendText(""+time+" ns\n");
+    	//long time = System.nanoTime();
+		//long estimatedTime = (System.nanoTime() - startTime);
+    	txtTempi.appendText(""+(System.nanoTime() - startTime)+" ns\n");
     	
     }
 
@@ -97,8 +100,9 @@ public class FXMLController {
     	elenco.reset();
     	txtResult.clear();
     	
-    	long time = System.nanoTime();
-    	txtTempi.appendText(""+time+" ns\n");
+    	//long time = System.nanoTime();
+    	//txtTempi.appendText(""+time+" ns\n");
+    	txtTempi.clear();
     }
 
     @FXML
